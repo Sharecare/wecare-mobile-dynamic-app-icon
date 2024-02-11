@@ -3,7 +3,7 @@
 # Run `pod lib lint dynamic_icon_flutter.podspec` to validate before publishing.
 #
 Pod::Spec.new do |s|
-  s.name             = 'dynamic_app_icon'
+  s.name             = 'dynamic_app_icon_flutter'
   s.version          = '0.0.1'
   s.summary          = 'Flutter plugin for IOS & Android app icon changing.'
   s.description      = <<-DESC
