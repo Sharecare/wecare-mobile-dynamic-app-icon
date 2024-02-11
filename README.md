@@ -3,17 +3,6 @@
 A flutter plugin for dynamically changing app icon in mobile platform. Supports **iOS and Android
 ** (IOS with version > `10.3`).
 
-## Known issues
-
-* Each android version will have different behavior, with Android 8 it may take a few seconds before
-  we can notice the change
-* Caution: Using this feature on some android versions will cause your app to crash (it will crash
-  the first time you change the icon, next time it won't), it's a bad user experience that you have
-  to crash the app to change the app icon, you can read more about this
-  issue [here](https://github.com/tastelessjolt/flutter_dynamic_icon/pull/10#issuecomment-959260628)
-* Due to Splash screen problems of newest Android versions, please consider to remove the below code
-  in your activity and activity-alias tags:
-
 ```
   <meta-data
                 android:name="io.flutter.embedding.android.SplashScreenDrawable"
@@ -97,11 +86,14 @@ A flutter plugin for dynamically changing app icon in mobile platform. Supports 
     * The name you pass in the method must be in the `AndroidManifest.xml` and for each icon, you
       must declare an activity-alias in `AndroidManifest.xml` like above
     * Declare an list of string (your available app icons)
-    * Dont forget to add `MainActivity` to your list
-    ```dart
+    * Dont forget to add `default` to your list
+
+### Android code Integration
+
+```dart
     const List<String> list = ["icon_1", "default"];
       DynamicAppIcon.setupAppIcon(iconName: 'icon_1', iconList: list);
-    ```
+```      
 
 ### iOS Integration
 
@@ -176,12 +168,12 @@ Here is `Info.plist` after adding Alternate Icons
 Now, you can call `DynamicAppIcon.setAlternateIconName` with the `CFBundleAlternateIcons` key as
 the argument to set that icon.
 
-### Dart/Flutter Integration
+### IOS Code Integration
 
 From your Dart code, you need to import the plugin and use it's static methods:
 
 ```dart 
-import 'package:dynamic_icon_flutter/dynamic_app_icon.dart';
+import 'package:dynamic_app_icon/dynamic_app_icon.dart';
 
 try {
 if (await DynamicAppIcon.supportsAlternateIcons) {
