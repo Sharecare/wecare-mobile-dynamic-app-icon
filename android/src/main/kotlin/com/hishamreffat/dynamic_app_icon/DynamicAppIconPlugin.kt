@@ -18,7 +18,7 @@ import java.lang.ref.WeakReference
 import io.flutter.embedding.engine.plugins.activity.ActivityAware
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding
 
-/** DynamicIconFlutterPlugin */
+/** DynamicAppIconPlugin */
 class DynamicAppIconPlugin : ContextAwarePlugin() {
     /// The MethodChannel that will the communication between Flutter and native Android
     ///
@@ -73,14 +73,12 @@ class DynamicAppIconPlugin : ContextAwarePlugin() {
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or
                     Intent.FLAG_ACTIVITY_CLEAR_TASK
-             this.activity?.recreate()
-            //startActivity(this.applicationContext!!, intent, null)
+             this.activity?.finish()
+            startActivity(this.applicationContext!!, intent, null)
         }
     }
 
 }
-
-
 abstract class ContextAwarePlugin : FlutterPlugin, ActivityAware, MethodChannel.MethodCallHandler {
 
     abstract val pluginName: String
