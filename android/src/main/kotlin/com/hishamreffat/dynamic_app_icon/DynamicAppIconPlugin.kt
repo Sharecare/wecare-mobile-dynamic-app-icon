@@ -73,8 +73,8 @@ class DynamicAppIconPlugin : ContextAwarePlugin() {
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or
                     Intent.FLAG_ACTIVITY_CLEAR_TASK
-             this.activity?.finish()
-            startActivity(this.applicationContext!!, intent, null)
+             this.activity?.recreate()
+            //startActivity(this.applicationContext!!, intent, null)
         }
     }
 
