@@ -123,6 +123,8 @@ in `CFBundleIcons~ipad` as
 well. [See here](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html#//apple_ref/doc/uid/TP40009249-SW14)
 for more details.
 
+When prompted with a popup below, select “Create groups”. This step is essential, as if not done correctly, it will result in an error when uploading to the AppStore.
+
 Here is `Info.plist` after adding Alternate Icons
 
 #### Screenshot
