@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/services.dart';
 
 class DynamicAppIcon {
-  static const MethodChannel _channel = MethodChannel('dynamic_icon_flutter');
+  static const MethodChannel _channel = MethodChannel('dynamic_app_icon');
 
   static Future<String?> get platformVersion async {
     final String? version = await _channel.invokeMethod('getPlatformVersion');
