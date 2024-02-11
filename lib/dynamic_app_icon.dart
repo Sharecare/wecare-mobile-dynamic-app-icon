@@ -46,4 +46,12 @@ class DynamicAppIcon {
     };
     await _channel.invokeMethod('setIcon', data);
   }
+  static Future<void> setupAppIcon(
+      {required String iconName, required List<String> iconList}) async {
+    if (!iconList.contains(iconName)) return;
+    await _channel.invokeMethod("setupIconList", iconList);
+    // final result =
+    await _channel.invokeMethod<bool>('setupAppIcon', iconName);
+   // return result;
+  }
 }
