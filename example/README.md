@@ -1,4 +1,4 @@
-# dynamic_icon_flutter_example
+# dynamic_app_icon_flutter_example
 
 Demonstrates how to use the dynamic_icon_flutter plugin.
 
