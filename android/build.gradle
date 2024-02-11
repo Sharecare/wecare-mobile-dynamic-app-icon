@@ -1,5 +1,3 @@
-package android
-
 group 'com.hishamreffat.dynamic_app_icon'
 version '1.0-SNAPSHOT'
 
