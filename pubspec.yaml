@@ -1,11 +1,11 @@
-name: dynamic_app_icon
+name: dynamic_app_icon_flutter
 description: A flutter plugin for dynamically changing app icon, support IOS version > 10.3 and Android
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/HeshamReffat
 repository: https://github.com/HeshamReffat/dynamic_app_icon
 
 environment:
-  sdk: ">=2.15.0 <3.0.0"
+  sdk: ">=2.15.0 <4.0.0"
   flutter: ">=2.5.0"
 
 dependencies:
