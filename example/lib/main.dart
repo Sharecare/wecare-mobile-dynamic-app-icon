@@ -62,8 +62,7 @@ class _MyAppState extends State<MyApp> {
                   try {
                     //print(await DynamicAppIcon.supportsAlternateIcons);
                     if (await DynamicAppIcon.supportsAlternateIcons) {
-                      await DynamicAppIcon.setAlternateIconName(
-                          "teamfortress");
+                      await DynamicAppIcon.setAlternateIconName("teamfortress");
                       _scaffoldKey.currentState?.hideCurrentSnackBar();
                       _scaffoldKey.currentState?.showSnackBar(const SnackBar(
                         content: Text("App icon change successful"),

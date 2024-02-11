@@ -44,6 +44,6 @@ class DynamicAppIcon {
     await _channel.invokeMethod("setupIconList", iconList);
     // final result =
     await _channel.invokeMethod<bool>('setupAppIcon', iconName);
-   // return result;
+    // return result;
   }
 }

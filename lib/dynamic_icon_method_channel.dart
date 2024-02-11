@@ -15,7 +15,7 @@ class MethodChannelDynamicIcon extends DynamicIconPlatform {
     if (!iconList.contains(iconName)) return false;
     await methodChannel.invokeMethod("setupIconList", iconList);
     final result =
-    await methodChannel.invokeMethod<bool>('setupAppIcon', iconName);
+        await methodChannel.invokeMethod<bool>('setupAppIcon', iconName);
     return result;
   }
 }

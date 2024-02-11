@@ -3,6 +3,8 @@
 A flutter plugin for dynamically changing app icon in mobile platform. Supports **iOS and Android
 ** (IOS with version > `10.3`).
 
+* Due to Splash screen problems of newest Android versions, please consider to remove the below code in your activity and activity-alias tags:
+
 ```
   <meta-data
                 android:name="io.flutter.embedding.android.SplashScreenDrawable"
