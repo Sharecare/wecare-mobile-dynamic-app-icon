@@ -135,6 +135,7 @@ Here is `Info.plist` after adding Alternate Icons
 
 #### Screenshot
 
+(https://raw.githubusercontent.com/tastelessjolt/flutter_dynamic_icon/master/imgs/directory_structure.png)
 ![info.plist](https://raw.githubusercontent.com/tastelessjolt/flutter_dynamic_icon/master/imgs/info-plist.png)
 
 #### Raw
