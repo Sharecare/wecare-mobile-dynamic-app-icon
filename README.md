@@ -1,4 +1,4 @@
-# dynamic_app_icon
+# dynamic_app_icon_flutter
 
 A flutter plugin for dynamically changing app icon in mobile platform. Supports **iOS and Android
 ** (IOS with version > `10.3`).
