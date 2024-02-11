@@ -99,8 +99,8 @@ A flutter plugin for dynamically changing app icon in mobile platform. Supports 
     * Declare an list of string (your available app icons)
     * Dont forget to add `MainActivity` to your list
     ```dart
-    const List<String> list = ["icon_1", "icon_2", "icon_n", "MainActivity"]
-    DynamicAppIcon.setIcon(icon: 'icon_1', listAvailableIcon: list);
+    const List<String> list = ["icon_1", "default"];
+      DynamicAppIcon.setupAppIcon(iconName: 'icon_1', iconList: list);
     ```
 
 ### iOS Integration
