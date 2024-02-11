@@ -72,7 +72,5 @@ class DynamicAppIconPlugin : FlutterPlugin, MethodCallHandler {
             PackageManager.COMPONENT_ENABLED_STATE_DISABLED
         }
         context.packageManager.setComponentEnabledSetting(componentName, newState, PackageManager.DONT_KILL_APP)
-        //this.activity?.recreate()
-        //startActivity(context, intent, null)
     }
 }
