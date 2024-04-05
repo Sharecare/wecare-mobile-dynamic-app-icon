@@ -36,8 +36,10 @@ class DynamicAppIconPlugin : FlutterPlugin, MethodCallHandler {
 
     override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
         if (call.method == "setupAppIcon") {
-            val iconName = call.arguments.toString();
-            val isSuccess = setupIcon(iconName)
+            val iconName = call.argument<String>("iconName") ?: ""
+            val packageName: String = call.argument<String?>("packageName") ?: ""
+            print(packageName)
+            val isSuccess = setupIcon(iconName, packageName)
             result.success(isSuccess)
         } else if (call.method == "setupIconList") {
             iconList = call.arguments as List<String>
@@ -49,15 +51,16 @@ class DynamicAppIconPlugin : FlutterPlugin, MethodCallHandler {
         channel.setMethodCallHandler(null)
     }
 
-    private fun setupIcon(iconName: String): Boolean {
+    private fun setupIcon(iconName: String, packageName: String): Boolean {
         val context = appContext ?: return false
         for (name in iconList) {
-            var cName = name;
+            var cName = name
             if (name == "default") {
                 cName = "MainActivity"
             }
-            val componentName = ComponentName(context, context.packageName + ".$cName")
-            val enable = name == iconName;
+            val computedPackageName = if (packageName == "") context.packageName else packageName
+            val componentName = ComponentName(context, computedPackageName + ".$cName")
+            val enable = name == iconName
             updateAlias(enable, componentName)
         }
         return true;

@@ -27,10 +27,11 @@
         </activity>
        <activity-alias
            android:label="Your app"
-           android:icon="@mipmap/ic_launcher_1"
+           android:icon="@mipmap/ic_launcher"
            android:name=".icon_1"
            android:enabled="false"
-           android:targetActivity=".MainActivity">
+           android:targetActivity=".MainActivity"
+           android:exported="true">
 
            <meta-data
                android:name="io.flutter.embedding.android.NormalTheme"

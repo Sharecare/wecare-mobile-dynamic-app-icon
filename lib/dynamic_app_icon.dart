@@ -39,11 +39,18 @@ class DynamicAppIcon {
 
   // For Android
   static Future<void> setupAppIcon(
-      {required String iconName, required List<String> iconList}) async {
+      { required String iconName,
+        required List<String> iconList,
+        String? packageName,
+      }) async {
     if (!iconList.contains(iconName)) return;
     await _channel.invokeMethod("setupIconList", iconList);
     // final result =
-    await _channel.invokeMethod<bool>('setupAppIcon', iconName);
+    var parameters = {"iconName": iconName};
+    if (packageName != null) {
+      parameters["packageName"] = packageName;
+    }
+    await _channel.invokeMethod<bool>('setupAppIcon', parameters);
     // return result;
   }
 }
